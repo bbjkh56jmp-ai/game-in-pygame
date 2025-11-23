@@ -14,23 +14,23 @@ K_LEFT, K_RIGHT, K_DOWN, K_UP = False, False, False, False
 zs = []
 bs = []
 IMAGES = {
-    "01": "pygam/sprites/PNG/Tiles/tile_01.png",
-    "02": "pygam/sprites/PNG/Tiles/tile_02.png",
-    "03": "pygam/sprites/PNG/Tiles/tile_03.png",
-    "17": "pygam/sprites/PNG/Tiles/tile_17.png",
-    "42": "pygam/sprites/PNG/Tiles/tile_42.png",
-    "116": "pygam/sprites/PNG/Tiles/tile_116.png",
-    "117": "pygam/sprites/PNG/Tiles/tile_117.png",
-    "143": "pygam/sprites/PNG/Tiles/tile_143.png",
-    "144": "pygam/sprites/PNG/Tiles/tile_144.png",
-    "163": "pygam/sprites/PNG/Tiles/tile_163.png",
-    "164": "pygam/sprites/PNG/Tiles/tile_164.png",
-    "167": "pygam/sprites/PNG/Tiles/tile_167.png",
-    "168": "pygam/sprites/PNG/Tiles/tile_168.png",
-    "190": "pygam/sprites/PNG/Tiles/tile_190.png",
-    "191": "pygam/sprites/PNG/Tiles/tile_191.png",
-    "194": "pygam/sprites/PNG/Tiles/tile_194.png",
-    "195": "pygam/sprites/PNG/Tiles/tile_195.png",
+    "01": "sprites/PNG/Tiles/tile_01.png",
+    "02": "sprites/PNG/Tiles/tile_02.png",
+    "03": "sprites/PNG/Tiles/tile_03.png",
+    "17": "sprites/PNG/Tiles/tile_17.png",
+    "42": "sprites/PNG/Tiles/tile_42.png",
+    "116": "sprites/PNG/Tiles/tile_116.png",
+    "117": "sprites/PNG/Tiles/tile_117.png",
+    "143": "sprites/PNG/Tiles/tile_143.png",
+    "144": "sprites/PNG/Tiles/tile_144.png",
+    "163": "sprites/PNG/Tiles/tile_163.png",
+    "164": "sprites/PNG/Tiles/tile_164.png",
+    "167": "sprites/PNG/Tiles/tile_167.png",
+    "168": "sprites/PNG/Tiles/tile_168.png",
+    "190": "sprites/PNG/Tiles/tile_190.png",
+    "191": "sprites/PNG/Tiles/tile_191.png",
+    "194": "sprites/PNG/Tiles/tile_194.png",
+    "195": "sprites/PNG/Tiles/tile_195.png",
 }
 MAP = []
 floar = ["17", "42"]
@@ -138,7 +138,7 @@ class Player(pygame.sprite.Sprite):
         self.y = y       
         self.x_speed = 0  
         self.y_speed = 0 
-        self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_stand.png")
+        self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_stand.png")
         self.image = pygame.transform.rotate(self.image, 270)
         self.rect = self.image.get_rect()
         self.rect.center = self.x, self.y
@@ -163,14 +163,14 @@ class Player(pygame.sprite.Sprite):
         if left:
             self.x_speed = -3
             if self.r > 20:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_hold.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_hold.png")
                 self.image = pygame.transform.rotate(self.image, 180)
                 self.a = 180
 
         elif right:
             self.x_speed = 3
             if self.r > 20:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_hold.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_hold.png")
                 self.image = pygame.transform.rotate(self.image, 0)
                 self.a = 0
 
@@ -183,14 +183,14 @@ class Player(pygame.sprite.Sprite):
         if down:
             self.y_speed = 3
             if self.r > 20:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_hold.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_hold.png")
                 self.image = pygame.transform.rotate(self.image, 270)
                 self.a = 270
 
         elif up:
             self.y_speed = -3
             if self.r > 20:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_hold.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_hold.png")
                 self.image = pygame.transform.rotate(self.image, 90)
                 self.a = 90
 
@@ -202,31 +202,31 @@ class Player(pygame.sprite.Sprite):
 
         if not self.diog_shot:
             if K_LEFT and self.r >= self.speed_shot:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_gun.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_gun.png")
                 self.image = pygame.transform.rotate(self.image, 180)
                 bs.append(Bullet(self.rect.x, self.rect.y, 2, 10))
                 self.r = 0
 
             elif K_RIGHT and self.r >= self.speed_shot:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_gun.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_gun.png")
                 self.image = pygame.transform.rotate(self.image, 0)
                 bs.append(Bullet(self.rect.x, self.rect.y, 1, 10))
                 self.r = 0
 
             elif K_DOWN and self.r >= self.speed_shot:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_gun.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_gun.png")
                 self.image = pygame.transform.rotate(self.image, 270)
                 bs.append(Bullet(self.rect.x, self.rect.y, 3, 10))
                 self.r = 0
 
             elif K_UP and self.r >= self.speed_shot:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_gun.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_gun.png")
                 self.image = pygame.transform.rotate(self.image, 90)
                 bs.append(Bullet(self.rect.x, self.rect.y, 4, 10))
                 self.r = 0
         else:
             if K_LEFT and self.r >= self.speed_shot:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_gun.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_gun.png")
                 self.image = pygame.transform.rotate(self.image, 180)
                 bs.append(Bullet(self.rect.x, self.rect.y, 2, 10))
                 bs.append(Bullet(self.rect.x, self.rect.y, 5, 10))
@@ -234,7 +234,7 @@ class Player(pygame.sprite.Sprite):
                 self.r = 0
 
             elif K_RIGHT and self.r >= self.speed_shot:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_gun.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_gun.png")
                 self.image = pygame.transform.rotate(self.image, 0)
                 bs.append(Bullet(self.rect.x, self.rect.y, 1, 10))
                 bs.append(Bullet(self.rect.x, self.rect.y, 7, 10))
@@ -242,7 +242,7 @@ class Player(pygame.sprite.Sprite):
                 self.r = 0
 
             elif K_DOWN and self.r >= self.speed_shot:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_gun.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_gun.png")
                 self.image = pygame.transform.rotate(self.image, 270)
                 bs.append(Bullet(self.rect.x, self.rect.y, 6, 10))
                 bs.append(Bullet(self.rect.x, self.rect.y, 3, 10))
@@ -250,7 +250,7 @@ class Player(pygame.sprite.Sprite):
                 self.r = 0
 
             elif K_UP and self.r >= self.speed_shot:
-                self.image = pygame.image.load("pygam/sprites/PNG/Hitman 1/hitman1_gun.png")
+                self.image = pygame.image.load("sprites/PNG/Hitman 1/hitman1_gun.png")
                 self.image = pygame.transform.rotate(self.image, 90)
                 bs.append(Bullet(self.rect.x, self.rect.y, 5, 10))
                 bs.append(Bullet(self.rect.x, self.rect.y, 8, 10))
@@ -533,7 +533,7 @@ class Boss(pygame.sprite.Sprite):
         self.y = y       
         self.x_speed = 0  
         self.y_speed = 0 
-        self.image = pygame.image.load("pygam/sprites/PNG/Zombie 1/zoimbie1_stand.png")
+        self.image = pygame.image.load("sprites/PNG/Zombie 1/zoimbie1_stand.png")
         self.image = pygame.transform.rotate(self.image, 270)
         self.image = pygame.transform.scale(self.image, (self.image.get_size()[0], self.image.get_size()[1]))
         self.rect = self.image.get_rect()
@@ -580,7 +580,7 @@ class Boss(pygame.sprite.Sprite):
                         print("босс злится")
 
         if self.hp < self.full_hp:
-            self.image = pygame.image.load("pygam/sprites/PNG/Zombie 1/zoimbie1_gun.png")
+            self.image = pygame.image.load("sprites/PNG/Zombie 1/zoimbie1_gun.png")
             self.image = pygame.transform.rotate(self.image, 270)
             if self.way[self.num_way % 2] == (self.rect.x, self.rect.y):
                 self.num_way += 1
@@ -615,7 +615,7 @@ class Boss(pygame.sprite.Sprite):
                 if self.time % 70 == 0:
                     bs.append(Bullet(p.rect.x, 0, 3, 5, "zombie"))
         else:
-            self.image = pygame.image.load("pygam/sprites/PNG/Zombie 1/zoimbie1_stand.png")
+            self.image = pygame.image.load("sprites/PNG/Zombie 1/zoimbie1_stand.png")
             self.image = pygame.transform.rotate(self.image, 270)
 
 
@@ -640,13 +640,13 @@ class Items(pygame.sprite.Sprite):
         else:
             self.baf = ybaf
         if self.baf == "spectral":
-            self.image = pygame.image.load("pygam/sprites/PNG/Slab/runeGrey_slab_001.png")
+            self.image = pygame.image.load("sprites/PNG/Slab/runeGrey_slab_001.png")
         elif self.baf == "diog_shot":
-            self.image = pygame.image.load("pygam/sprites/PNG/Slab/runeGrey_slab_002.png")
+            self.image = pygame.image.load("sprites/PNG/Slab/runeGrey_slab_002.png")
         elif self.baf == "speed_shot":
-            self.image = pygame.image.load("pygam/sprites/PNG/Slab/runeGrey_slab_003.png")
+            self.image = pygame.image.load("sprites/PNG/Slab/runeGrey_slab_003.png")
         elif self.baf == "heal":
-            self.image = pygame.image.load("pygam/sprites/PNG/Slab/runeGrey_slab_004.png")
+            self.image = pygame.image.load("sprites/PNG/Slab/runeGrey_slab_004.png")
         self.rect = self.image.get_rect()
         self.rect.center = self.x, self.y
         print(self.baf)
@@ -701,12 +701,12 @@ for i in TILES:
 
 
 p = Player(WIDTH / 2, 70, 2)
-z = Zombie(["pygam/sprites/PNG/Zombie 1/zombie.png", "pygam/sprites/PNG/Zombie 1/zombie_right.png", "pygam/sprites/PNG/Zombie 1/zombie_left.png",
-"pygam/sprites/PNG/Zombie 1/zombie.png", "pygam/sprites/PNG/Zombie 1/zombie_up.png"], WIDTH / 2,  HEIGHT / 2, 2)
-s = Zombie(["pygam/sprites/PNG/Zombie 1/skeleton.png", "pygam/sprites/PNG/Zombie 1/skeleton_right.png", "pygam/sprites/PNG/Zombie 1/skeleton_left.png",
-"pygam/sprites/PNG/Zombie 1/skeleton.png", "pygam/sprites/PNG/Zombie 1/skeleton_up.png"], (WIDTH / 4) * 3,  (HEIGHT / 4) * 3, 2)
-s1 = Zombie(["pygam/sprites/PNG/Zombie 1/skeleton_runner.png", "pygam/sprites/PNG/Zombie 1/skeleton_runner_right.png", "pygam/sprites/PNG/Zombie 1/skeleton_runner_left.png",
-"pygam/sprites/PNG/Zombie 1/skeleton_runner.png", "pygam/sprites/PNG/Zombie 1/skeleton_runner_up.png"], (WIDTH / 4) * 3,  (HEIGHT / 4), 2)
+z = Zombie(["sprites/PNG/Zombie 1/zombie.png", "sprites/PNG/Zombie 1/zombie_right.png", "sprites/PNG/Zombie 1/zombie_left.png",
+"sprites/PNG/Zombie 1/zombie.png", "sprites/PNG/Zombie 1/zombie_up.png"], WIDTH / 2,  HEIGHT / 2, 2)
+s = Zombie(["sprites/PNG/Zombie 1/skeleton.png", "sprites/PNG/Zombie 1/skeleton_right.png", "sprites/PNG/Zombie 1/skeleton_left.png",
+"sprites/PNG/Zombie 1/skeleton.png", "sprites/PNG/Zombie 1/skeleton_up.png"], (WIDTH / 4) * 3,  (HEIGHT / 4) * 3, 2)
+s1 = Zombie(["sprites/PNG/Zombie 1/skeleton_runner.png", "sprites/PNG/Zombie 1/skeleton_runner_right.png", "sprites/PNG/Zombie 1/skeleton_runner_left.png",
+"sprites/PNG/Zombie 1/skeleton_runner.png", "sprites/PNG/Zombie 1/skeleton_runner_up.png"], (WIDTH / 4) * 3,  (HEIGHT / 4), 2)
 
 def del_zs_and_bs():
     t = 0
